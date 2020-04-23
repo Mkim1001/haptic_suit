@@ -137,7 +137,7 @@ void loop(){
             client.println("<p>Click the buttons to telecomunicat touch senses to the suit:</p>");
          
            client.println("<div class=container>");
-           client.println("<img src=\"https://cdn.shopify.com/s/files/1/0302/2537/products/Crash_Chest_Protector_Front_01_grande.jpg?v=1535963162\">");
+          client.println("<img src=\"https://mkim1001.github.io/haptic_suit/Bodysuite.png\">");
           client.println("<img src=img_Bodysuit.jpg>// alt=now style=width:100%>");
            client.println("<button class=btn>Button</button>");
            client.println("<button2 class=btn2>Button</button2>");
