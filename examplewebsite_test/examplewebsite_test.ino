@@ -138,7 +138,7 @@ void loop(){
          
            client.println("<div class=container>");
           client.println("<img src=\"https://mkim1001.github.io/haptic_suit/Bodysuite.png\">");
-          client.println("<img src=img_Bodysuit.jpg>// alt=now style=width:100%>");
+          //client.println("<img src=img_Bodysuit.jpg>// alt=now style=width:100%>");
            client.println("<button class=btn>Button</button>");
            client.println("<button2 class=btn2>Button</button2>");
           
