@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<title>Haptic body suit</title>
+	 <style>
+        .suit {
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .button1 {
+            position: absolute;
+            top: 78px;
+            left: 100px;
+            z-index: 2;
+        }
+
+        .button2 {
+            position: absolute;
+            top: 75px;
+            left: 390px;
+            z-index: 2;
+        }
+
+        .button3 {
+            position: absolute;
+            top: 185px;
+            left: 250px;
+            z-index: 2;
+        }
+
+        .button4 {
+            position: absolute;
+            top: 309px;
+            left: 250px;
+            z-index: 2;
+        }
+
+        .button5 {
+            position: absolute;
+            top: 425px;
+            left: 250px;
+            z-index: 2;
+        }
+
+        .button6 {
+            position: absolute;
+            top: 210px;
+            left: 30px;
+            z-index: 2;
+        }
+
+        .button7 {
+            position: absolute;
+            top: 210px;
+            left: 460px;
+            z-index: 2;
+        }
+
+        .button8 {
+            position: absolute;
+            top: 185px;
+            left: 775px;
+            z-index: 2;
+        }
+
+        .button9 {
+            position: absolute;
+            top: 109px;
+            left: 589px;
+            z-index: 2;
+        }
+
+        .button10 {
+            position: absolute;
+            top: 100px;
+            left: 950px;
+            z-index: 2;
+        }
+
+        .button11 {
+            position: absolute;
+            top: 305px;
+            left: 775px;
+            z-index: 2;
+        }
+
+        .button12 {
+            position: absolute;
+            top: 29px;
+            left: 775px;
+            z-index: 2;
+        }
+
+        .button13 {
+            position: absolute;
+            top: 439px;
+            left: 765px;
+            z-index: 2;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        var socket = io.connect(window.location.origin);
+        var status;
+        socket.on('data', function (data) {
+            console.log(data);
+        });
+        socket.on('error', function () {
+            console.error(arguments)
+        });
+        function send(msg) {
+            socket.emit('data', {
+                val: msg
+            });
+        }
+        send('f_right_shoulder')
+        send('f_left_shoulder')
+        send('f_chest')
+        send('up_belly')
+        send('low_belly')
+        send('right_arm')
+        send('left_arm')
+        send('back')
+        send('b_left_shoulder')
+        send('b_right_shoulder')
+        send('spine')
+        send('neck')
+        send('low_back')
+       
+
+        $(document).ready(function () {
+            $(".button1").click(function () {
+                $('#status').text("Right Shoulder");
+                send('f_right_shoulder')
+            });
+            $(".button2").click(function () {
+                $('#status').text("Left Shoulder");
+                send('f_left_shoulder')
+            });
+            $(".button3").click(function () {
+                $('#status').text("Chest");
+                send('f_chest')
+            });
+            $(".button4").click(function () {
+                $('#status').text("Upper Belly");
+                send('up_belly')
+            });
+            $(".button5").click(function () {
+                $('#status').text("Lower Belly");
+                send('low_belly')
+            });
+            $(".button6").click(function () {
+                $('#status').text("Right Arm");
+                send('right_arm')
+            });
+            $(".button7").click(function () {
+                $('#status').text("Left Arm");
+                send('left_arm')
+            });    
+                $(".button8").click(function () {
+                $('#status').text("Back");
+                send('back')
+            });
+            $(".button9").click(function () {
+                $('#status').text("Back of Left Shoulder");
+                send('b_left_shoulder')
+            });
+            $(".button10").click(function () {
+                $('#status').text("Back of Right Shoulder");
+                send('b_right_shoulder')
+            });
+            $(".button11").click(function () {
+                $('#status').text("Spine");
+                send('spine')
+            });
+            $(".button12").click(function () {
+                $('#status').text("Neck");
+                send('neck')
+            });
+            $(".button13").click(function () {
+                $('#status').text("Lower Back");
+                send('low_back')
+            });
+
+
+        });
+
+    </script>
+	<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="img/favicon-64x64.png" sizes="64x64">
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/animsition.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="homepage">
+	<div class="wrap">
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12"><a href="index.html"><img src="img/logo.png" width="340" height="60" border="0" alt="Haptic body suit"></a>
+						<nav>
+							<ul>								
+								<li><a class="smooth-leave" href="#">Interact Live!</a></li>
+								<li><a class="smooth-leave" href="http://minjun.com/portfolio-item/haptic-bodysuit/">About the Work</a></li>
+								<li><a class="smooth-leave" href="http://minjun.com/about/">About the Artist</a></li>								
+								<li><a class="smooth-leave" href="http://minjun.com">Minjun.com</a></li>
+							</ul>
+						</nav><span class="nav-toggle">Menu</span>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div class="spacer">
+				<div class="intro">
+					<div style="position: relative; left: 0; top: 0;">
+						<img src="button.png" height="60" class="button1" />
+						<img src="button.png" height="60" class="button2" />
+						<img src="button.png" height="60" class="button3" />
+						<img src="button.png" height="60" class="button4" />
+						<img src="button.png" height="60" class="button5" />
+						<img src="button.png" height="60" class="button6" />
+						<img src="button.png" height="60" class="button7" />
+						<img src="button.png" height="60" class="button8" />
+						<img src="button.png" height="60" class="button9" />
+						<img src="button.png" height="60" class="button10" />
+						<img src="button.png" height="60" class="button11" />
+						<img src="button.png" height="60" class="button12" />
+						<img src="button.png" height="60" class="button13" />
+						<img src="https://mkim1001.github.io/haptic_suit/Bodysuite.png" height="600" class="suit" /><br><br>
+						<h1 id="status">Click any red buttons to send me touch senses!</h1>
+					</div>
+				</div>
+			</div>
+			
+		</main>
+		<footer class="mar-top-lg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-3 col-sm-12"><a href="index.html"><img src="img/logo_white.png" width="340" height="60" border="0" alt=""></a></div>
+					<div class="col-lg-4 col-md-4 col-sm-12">
+						<div class="footer-contacts">
+							<div class="wrap">
+								<div class="address">
+									<p>1170 Beethoven CMN.106<br>Fremont, CA 94538<br>USA</p>
+								</div><a class="email" href="mailto:minjunkim98@gmail.com">minjunkim98@gmail.com</a><br><a class="phone" href="tel:5104931356">510-493-1356</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-5 col-sm-12">
+						<div class="social-links">
+							<ul>
+								<li><a class="facebook" href="#"></a></li>
+								<li><a class="twitter" href="#"></a></li>
+								<li><a class="instagram" href="#"></a></li>
+								<li><a class="dribbble" href="#"></a></li>
+								<li><a class="behance" href="#"></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/plugins.min.js"></script>
+	<script src="js/functions.js"></script>
+</body>
+
+</html>
